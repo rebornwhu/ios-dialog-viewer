@@ -8,11 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UICollectionViewController {
+    
+    private var sections: [[String: String]]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        sections = [
+            ["header": "First Witch", "content": "Hey, when will the three of us meet up later?"],
+            ["header": "Second Witch", "content": "When, everything's straightened out."],
+            ["header": "Third Witch", "content": "That'll be just before sunset."],
+            ["header": "First Witch", "content": "Where?"],
+            ["header": "Second Witch", "content": "The dirt patch."],
+            ["header": "Third Witch", "content": "I guess we'll see Mac there."]
+        ]
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,8 @@
 		891504471BD2E8BB00A9EBB8 /* ios_dialog_viewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891504461BD2E8BB00A9EBB8 /* ios_dialog_viewerTests.swift */; };
 		891504521BD2E8BB00A9EBB8 /* ios_dialog_viewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891504511BD2E8BB00A9EBB8 /* ios_dialog_viewerUITests.swift */; };
 		891504601BD2EB2800A9EBB8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8915045F1BD2EB2800A9EBB8 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		891504621BD2ECDB00A9EBB8 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891504611BD2ECDB00A9EBB8 /* ContentCell.swift */; settings = {ASSET_TAGS = (); }; };
+		891504641BD2F2F800A9EBB8 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891504631BD2F2F800A9EBB8 /* HeaderCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		891504511BD2E8BB00A9EBB8 /* ios_dialog_viewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_dialog_viewerUITests.swift; sourceTree = "<group>"; };
 		891504531BD2E8BB00A9EBB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8915045F1BD2EB2800A9EBB8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		891504611BD2ECDB00A9EBB8 /* ContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		891504631BD2F2F800A9EBB8 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				891504381BD2E8BB00A9EBB8 /* Assets.xcassets */,
 				8915043A1BD2E8BB00A9EBB8 /* LaunchScreen.storyboard */,
 				8915043D1BD2E8BB00A9EBB8 /* Info.plist */,
+				891504611BD2ECDB00A9EBB8 /* ContentCell.swift */,
+				891504631BD2F2F800A9EBB8 /* HeaderCell.swift */,
 			);
 			path = "ios-dialog-viewer";
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891504641BD2F2F800A9EBB8 /* HeaderCell.swift in Sources */,
+				891504621BD2ECDB00A9EBB8 /* ContentCell.swift in Sources */,
 				891504341BD2E8BB00A9EBB8 /* ViewController.swift in Sources */,
 				891504321BD2E8BB00A9EBB8 /* AppDelegate.swift in Sources */,
 			);
