@@ -28,6 +28,13 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         var contentInset = collectionView?.contentInset
         contentInset?.top = 20
         collectionView?.contentInset = contentInset!
+        
+        let layout = collectionView?.collectionViewLayout
+        let flow = layout as! UICollectionViewFlowLayout
+        flow.sectionInset = UIEdgeInsetsMake(10, 20, 30, 20)
+        
+        collectionView?.registerClass(HeaderCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HEADER")
+        flow.headerReferenceSize = CGSizeMake(100, 25)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,5 +74,17 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let words = wordsInSection(indexPath.section)
         let size = ContentCell.sizeForContentString(words[indexPath.row], forMaxWidth: collectionView.bounds.size.width)
         return size
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        if (kind == UICollectionElementKindSectionHeader) {
+            let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HEADER", forIndexPath: indexPath) as! HeaderCell
+            cell.maxWidth = collectionView.bounds.size.width
+            cell.text = sections[indexPath.section]["header"]
+            return cell
+        }
+        
+        abort()
     }
 }
