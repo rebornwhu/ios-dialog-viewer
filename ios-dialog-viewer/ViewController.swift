@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private var sections: [[String: String]]!
 
@@ -42,7 +42,7 @@ class ViewController: UICollectionViewController {
         return words!
     }
     
-    
+    // MARK: -
     // MARK: UICollectionView data source
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return sections.count
@@ -61,4 +61,11 @@ class ViewController: UICollectionViewController {
         return cell
     }
     
+    // MARK: -
+    // MARK: UICollectionViewDelegateFlowLayout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let words = wordsInSection(indexPath.section)
+        let size = ContentCell.sizeForContentString(words[indexPath.row], forMaxWidth: collectionView.bounds.size.width)
+        return size
+    }
 }
