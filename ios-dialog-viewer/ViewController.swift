@@ -23,6 +23,11 @@ class ViewController: UICollectionViewController {
             ["header": "Second Witch", "content": "The dirt patch."],
             ["header": "Third Witch", "content": "I guess we'll see Mac there."]
         ]
+        
+        collectionView?.registerClass(ContentCell.self, forCellWithReuseIdentifier: "CONTENT")
+        var contentInset = collectionView?.contentInset
+        contentInset?.top = 20
+        collectionView?.contentInset = contentInset!
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +35,30 @@ class ViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func wordsInSection(section: Int) -> [String] {
+        let content = sections[section]["content"]
+        let spaces = NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        let words = content?.componentsSeparatedByCharactersInSet(spaces)
+        return words!
+    }
+    
+    
+    // MARK: UICollectionView data source
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return sections.count
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let words = wordsInSection(section)
+        return words.count
+    }
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let words = wordsInSection(indexPath.section)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CONTENT", forIndexPath: indexPath) as! ContentCell;
+        cell.maxWidth = collectionView.bounds.size.width
+        cell.text = words[indexPath.row]
+        return cell
+    }
+    
 }
-
